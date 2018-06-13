@@ -25,6 +25,7 @@ class Collider extends GameObject{
     }
 
     CheckCollision() {
+        // Needs Quadrant Implementation
         // To be implemented
     }
 }

@@ -69,6 +69,14 @@ class GameObject {
         this.position.y = yPos - this.offset.y;
     }
 
+    /**
+     * Sets the Offsetted Position of the object
+     * @param {Vector2} pos 
+     */
+    SetPosition(pos) {
+        this.position = pos.Minus(this.offset);
+    }
+
         // Implement Rotation
     /**
      * Updates its position with the parent position 
