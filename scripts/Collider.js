@@ -14,18 +14,6 @@ class Collider extends GameObject{
         this.quadrant;
     }
 
-    // Implement Rotation
-    /**
-     * Updates its position with the parent position 
-     * if the parent exists, is valid and is a GameObject
-     */
-    UpdatePositionWithParent() {
-        var parentPos = GameController.GameObjects.GetGameObjectById(this.parent).position;
-        if( parentPos !== null && parentPos !== undefined && parentPos instanceof GameObject) {
-            this.position = parentPos;
-        }
-    }
-
     Update() {
         super.Update();
         this.UpdatePositionWithParent();

@@ -1,6 +1,8 @@
 var canvas = document.getElementById('canvas');
 var canvasContext = canvas.getContext('2d');
 
+// TODO: Move global objects to their right places
+
 var GameController;
 var DebugController;
 var DeltaTime = 0;
@@ -9,6 +11,8 @@ var Input = {
     mousePosition: new Vector2()
 }
 var _mousePosition = new Vector2();
+//
+var canvasMargin = 4;
 
 function runLoop(currentTimeLapse) {
     DeltaTime = (currentTimeLapse - lastFrameLapse) / 1000;

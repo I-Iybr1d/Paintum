@@ -61,6 +61,7 @@ class GameControl {
         this.GameObjects.forEach(obj => {
             if(obj.isUpdated && obj.isActive) { obj.Draw(), obj.IsDrawn = true }
         });
+        this.GameObjects.forEach(obj => obj.ForceDraw());
     }
 
     CheckIfGameObjectExists(id) {
@@ -93,6 +94,7 @@ class GameControl {
     //#region Game Specific Run Logic
     InitializeBreakout() {
         this.CreatePaddle("paddle", null, new Vector2(32, 620), 256, 16, "white");
+        this.AddNewGameObject(new Circle("circle", null, new Vector2(32, 32), new Vector2(0, 0), 0, Math.PI * 2, 32, "white"));
     }
 
     CreatePaddle(id, parent, position, width, height, color) {

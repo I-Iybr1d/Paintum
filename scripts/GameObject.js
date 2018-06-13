@@ -10,6 +10,7 @@ class GameObject {
         this.isUpdated = false;
         this.isDrawn = false;
         this.parent = parent;
+        // Define update parent position with itself ins this class
     }
 
     Initialize() {
@@ -41,6 +42,12 @@ class GameObject {
          * Add draw code here
          */
     }
+
+    ForceDraw() {
+        /**
+         * Add draw code here
+         */
+    }
     
     // SetLocalOrigin(position) {
     //     this.position = position - this.offset;
@@ -51,7 +58,7 @@ class GameObject {
      * @param {number} xPos 
      */
     SetX(xPos) {
-        this.position.x = xPos + this.offset.x;
+        this.position.x = xPos - this.offset.x;
     }
 
     /**
@@ -59,6 +66,19 @@ class GameObject {
      * @param {number} yPos 
      */
     SetY(yPos) {
-        this.position.y = yPos + this.offset.y;
+        this.position.y = yPos - this.offset.y;
     }
+
+        // Implement Rotation
+    /**
+     * Updates its position with the parent position 
+     * if the parent exists, is valid and is a GameObject
+     */
+    UpdatePositionWithParent() {
+        var parentPos = GameController.GetGameObjectById(this.parent).position;
+        if( parentPos !== null && parentPos !== undefined && parentPos instanceof GameObject) {
+            this.position = parentPos;
+        }
+    }
+
 }

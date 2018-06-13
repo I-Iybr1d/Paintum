@@ -21,7 +21,7 @@ class Paddle extends Rectangle {
     Update() {
         // Parent Updates
         super.Update();
-        this.SetX(Utils.ClampNumber(Input.mousePosition.x, this.width / 2, canvas.width - (this.width / 2)));
+        this.SetX(Utils.ClampNumber(Input.mousePosition.x, this.width / 2 + canvasMargin, canvas.width - (this.width / 2) - canvasMargin));
         // Child Updates
         this.collider.Update();
     }
