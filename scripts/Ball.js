@@ -25,7 +25,11 @@ class Ball extends Circle {
     Update() {
         // Parent Updates
         super.Update();
-        this.position(Utils.ClampNumber(Input.mousePosition.x, this.width / 2 + canvasMargin, canvas.width - (this.width / 2) - canvasMargin));
+        this.position = new Vector2(
+            Utils.ClampNumber(Input.mousePosition.x, 0, canvas.w),
+            Utils.ClampNumber(Input.mousePosition.y, 0, this.height), 
+        );
+        //this.position(Utils.ClampNumber(Input.mousePosition.x, this.width / 2 + canvasMargin, canvas.width - (this.width / 2) - canvasMargin));
         // Child Updates
         // this.collider.Update();
     }
