@@ -14,6 +14,10 @@ class Scene {
 
 
     Update() {
-
+        this.GameObjectList.forEach(gameObj => {
+            if(gameObj.isActive && gameObj.isStarted) {
+                gameObj.Update();
+            }
+        });
     }
 }

@@ -10,8 +10,12 @@ class GameObject {
         this.isUpdated = false;
         this.isDrawn = false;
         this.parent = parent;
-        // Define update parent position with itself ins this class
+        // Define update parent position with itself in this class
     }
+
+    // Set the hook functions to be exposed as public
+    // but make them call a private function where the validations
+    // are made as weel the object logic
 
     Initialize() {
         /**
