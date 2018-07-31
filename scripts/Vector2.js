@@ -1,4 +1,4 @@
-class Vector2 {
+export default class Vector2 {
     constructor(x, y) {
         if(x === undefined || x === null) {
             this.x = 0;

@@ -1,18 +1,20 @@
-var canvas = document.getElementById('canvas');
-var canvasContext = canvas.getContext('2d');
+import { Controller as GameController }  from './GameControl';
+import { Color } from './Globals';
 
-// TODO: Move global objects to their right places
-
-var GameController;
-var DebugController;
 var DeltaTime = 0;
 var lastFrameLapse = 0;
-var Input = {
-    mousePosition: new Vector2()
+
+function Initialize() {
+    // GameController = new GameControl();
+    // AudioController = new AudioSet();
+    // GameController.DebugController.Activate();
+
+
+    GameController.Initialize();
+    GameController.Start();
+
+    runLoop(0);
 }
-var _mousePosition = new Vector2();
-//
-var canvasMargin = 4;
 
 function runLoop(currentTimeLapse) {
     DeltaTime = (currentTimeLapse - lastFrameLapse) / 1000;
@@ -30,16 +32,6 @@ function runLoop(currentTimeLapse) {
     requestAnimationFrame(runLoop);
 }
 
-function Initialize() {
-    GameController = new GameControl();
-    // AudioController = new AudioSet();
-    // GameController.DebugController.Activate();
 
-
-    GameController.Initialize();
-    GameController.Start();
-
-    runLoop(0);
-}
 
 Initialize();

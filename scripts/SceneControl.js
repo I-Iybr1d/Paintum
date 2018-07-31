@@ -1,4 +1,4 @@
-class SceneControl {
+export default class SceneControl {
     constructor() {
         this.SceneList = new Map();
     }

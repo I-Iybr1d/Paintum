@@ -1,4 +1,5 @@
-class Scene {
+
+export default class Scene {
     constructor() {
         this.GameObjectList = {};
     }

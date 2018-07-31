@@ -1,4 +1,7 @@
-class GameObject {
+import Vector2 from './Vector2';
+import { Controller as GameController }  from './GameControl';
+
+export default class GameObject {
     constructor(id = "No Id", parent = null, position = new Vector2(0, 0), offset = new Vector2(0, 0)) {
         this.id = id;
         this.position = position;

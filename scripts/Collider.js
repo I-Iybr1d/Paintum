@@ -1,10 +1,7 @@
-var ColliderType = {
-    Undefined: 0,
-    Squared: 1,
-    Circular: 2
-}
+import GameObject from './GameObject';
+import { ColliderType } from './Globals';
 
-class Collider extends GameObject{
+export default class Collider extends GameObject{
     constructor(id, type = ColliderType.Squared, width = 0, height = 0, position = Vector2.Zero, offset = Vector2.Zero, parent) {
         super(id, parent, position, offset);
         this.type = type;

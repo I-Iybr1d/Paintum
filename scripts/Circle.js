@@ -1,4 +1,7 @@
-class Circle extends GameObject {
+import GameObject from './GameObject';
+import { canvasContext } from './Globals';
+
+export default class Circle extends GameObject {
     constructor(id, parent, position, offset, startAngle, endAngle, radius, color) {
         super(id, parent, position, offset);
         this.startAngle = startAngle;

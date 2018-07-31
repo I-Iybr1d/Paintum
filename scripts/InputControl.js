@@ -1,4 +1,7 @@
-class InputControl {
+import { Input } from './Globals';
+import Vector2 from './Vector2';
+
+export default class InputControl {
     constructor(id) {
         // singleton?
         this.id = id;

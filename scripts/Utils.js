@@ -1,4 +1,6 @@
-class Utils {
+import Vector2 from './Vector2';
+
+export default class Utils {
     static ClampNumber(number, min, max) {
         return number > max ? max : number < min ? min : number;
     }

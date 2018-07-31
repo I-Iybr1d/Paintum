@@ -1,4 +1,7 @@
-class Rectangle extends GameObject {
+import GameObject from './GameObject';
+import { canvasContext } from './Globals';
+
+export default class Rectangle extends GameObject {
     constructor(id, parent, position, offset, width, height, color) {
         super(id, parent, position, offset);
         this.width = width;

@@ -1,4 +1,7 @@
-class Ball extends Circle {
+import Circle from './Circle';
+import Vector2 from './Vector2';
+
+export default class Ball extends Circle {
     constructor(id, parent, position, offset, startAngle, endAngle, radius, color) {
         super(id, parent, position, offset, startAngle, endAngle, radius, color);
         this.velocity = 5; // To be implemented with physics

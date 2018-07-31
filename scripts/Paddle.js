@@ -1,4 +1,9 @@
-class Paddle extends Rectangle {
+import Rectangle from './Rectangle';
+import Collider from './Collider';
+import Utils from './Utils';
+import { ColliderType, Input, canvasMargin, canvas } from './Globals';
+
+export default class Paddle extends Rectangle {
     constructor(id, parent, position, offset, width, height, color) {
         super(id, parent, position, offset, width, height, color);
         this.velocity = 0; // To be implemented with physics

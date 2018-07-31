@@ -1,3 +1,10 @@
+import InputControl from './InputControl';
+import GameObject from './GameObject';
+import Vector2 from './Vector2';
+import Paddle from './Paddle';
+import Circle from './Circle';
+import { canvas, canvasContext, Color } from './Globals';
+
 class GameControl {
     constructor() {
         this.GameObjects = new Map();
@@ -101,6 +108,7 @@ class GameControl {
         this.AddNewGameObject(new Paddle(id, parent, position, new Vector2(width / 2, height), width, height, color));
     }
 
-
     //#endregion Game Specific Run Logic
 }
+
+export var Controller = new GameControl();
