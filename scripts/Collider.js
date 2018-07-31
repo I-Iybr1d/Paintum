@@ -22,6 +22,7 @@ export default class Collider extends GameObject{
     }
 
     CheckCollision() {
+        // Returns boolean
         // Needs Quadrant Implementation
         // To be implemented
     }

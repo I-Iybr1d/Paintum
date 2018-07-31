@@ -68,15 +68,26 @@ export default class Vector2 {
         return new Vector2(this.x / vector.x, this.y / vector.y);
     }
 
-    SetX() {
+    Torwards(vector) {
+        newX = vector.x - this.x;
+        if (newX < 0) {
+            newX *= -1;
+        }
+
+        newY = vector.y - this.y;
+        if (newY < 0) {
+            newX *= -1;
+        }
+
         
+        return Vector(x2-x1,y2-y1);
     }
 }
 
-Vector2.Zero = new Vector2(0, 0);
-Vector2.One = new Vector2(1, 1);
-Vector2.Up = new Vector2(0, 1);
-Vector2.Down = new Vector2(0, -1);
-Vector2.Left = new Vector2(-1, 0);
-Vector2.Right = new Vector2(1, 0);
+export var Zero = new Vector2(0, 0);
+export var One = new Vector2(1, 1);
+export var Up = new Vector2(0, 1);
+export var Down = new Vector2(0, -1);
+export var Left = new Vector2(-1, 0);
+export var Right = new Vector2(1, 0);
 

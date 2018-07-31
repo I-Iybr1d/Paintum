@@ -101,11 +101,16 @@ class GameControl {
     //#region Game Specific Run Logic
     InitializeBreakout() {
         this.CreatePaddle("paddle", null, new Vector2(32, 620), 256, 16, "white");
-        this.AddNewGameObject(new Circle("circle", null, new Vector2(32, 32), new Vector2(0, 0), 0, Math.PI * 2, 8, "white"));
+        this.CreateBall("circle", null, new Vector2(32, 32), new Vector2(0, 0), 0, Math.PI * 2, 8, "white");
+
     }
 
     CreatePaddle(id, parent, position, width, height, color) {
         this.AddNewGameObject(new Paddle(id, parent, position, new Vector2(width / 2, height), width, height, color));
+    }
+
+    CreateBall(id, parent, position, offset, startAngle, endAngle, radius, color) {
+        this.AddNewGameObject(new Circle(id, parent, position, offset, startAngle, endAngle, radius, color));
     }
 
     //#endregion Game Specific Run Logic
