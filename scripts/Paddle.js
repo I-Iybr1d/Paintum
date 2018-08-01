@@ -1,5 +1,5 @@
 import Rectangle from './Rectangle';
-import Collider from './Collider';
+import Collider from './Physics/Collider';
 import Utils from './Utils';
 import { ColliderType, Input, canvasMargin, canvas } from './Globals';
 

@@ -1,14 +1,11 @@
 import GameObject from './GameObject';
-import { ColliderType } from './Globals';
+import CollisionInfo from './ColisionInfo';
 
 export default class Collider extends GameObject{
-    constructor(id, type = ColliderType.Squared, width = 0, height = 0, position = Vector2.Zero, offset = Vector2.Zero, parent) {
+    constructor(id, position = Vector2.Zero, offset = Vector2.Zero, parent) {
         super(id, parent, position, offset);
-        this.type = type;
-        this.width = width;
-        this.height = height;
-        this.parent = parent;
         this.quadrant;
+        this.collisionInfo = new CollisionInfo();
     }
 
     Update() {

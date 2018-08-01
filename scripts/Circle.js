@@ -1,8 +1,8 @@
 import GameObject from './GameObject';
 import { canvasContext, canvas, canvasMargin } from './Globals';
 import Vector2 from './Vector2';
-import Collider from './Collider';
 import { ColliderType } from './Globals';
+import CircularCollider from './Physics/CircularCollider';
 
 export default class Circle extends GameObject {
     constructor(id, parent, position, offset, startAngle, endAngle, radius, color) {
@@ -11,9 +11,8 @@ export default class Circle extends GameObject {
         this.endAngle = endAngle;
         this.radius =  radius;
         this.color = color;
-        this.collider = new Collider(
+        this.collider = new CircularCollider(
             this.id + "_collider",
-            ColliderType.Circle,
             radius,
             position,
             offset,
