@@ -69,18 +69,19 @@ export default class Vector2 {
     }
 
     Torwards(vector) {
-        newX = vector.x - this.x;
-        if (newX < 0) {
-            newX *= -1;
-        }
+        // Returns a normalized vector with the direction
+        // of the current vector to the provided vector
+        oldX = newX = vector.x - this.x;
+        if (newX < 0) { newX = -newX; }
 
-        newY = vector.y - this.y;
-        if (newY < 0) {
-            newX *= -1;
-        }
+        oldY = newY = vector.y - this.y;
+        if (newY < 0) { newY = -newY; }
 
-        
-        return Vector(x2-x1,y2-y1);
+        return new Vector2(oldX / newX, oldY / newY);
+    }
+
+    Away(vector) {
+        return this.Torwards(vector).Multiply(new Vector2(-1, -1));
     }
 }
 
