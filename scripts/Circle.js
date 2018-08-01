@@ -2,6 +2,7 @@ import GameObject from './GameObject';
 import { canvasContext, canvas, canvasMargin } from './Globals';
 import Vector2 from './Vector2';
 import Collider from './Collider';
+import { ColliderType } from './Globals';
 
 export default class Circle extends GameObject {
     constructor(id, parent, position, offset, startAngle, endAngle, radius, color) {
@@ -46,16 +47,12 @@ export default class Circle extends GameObject {
 
         this.position = new Vector2(this.position.x + this.velX, this.position.y + this.velY);
 
-        console.log('velX', this.velX);
-        console.log('PosX', this.position.x);
-        console.log('velY', this.velY);
-        console.log('PosY', this.position.y);
         // Child Updates
-        this.collider.Update();
-        var colisionHappened = this.collider.CheckCollision();
-        if(colisionHappened) {
-            // effect
-        }
+        //this.collider.Update();
+        //var colisionHappened = this.collider.CheckCollision();
+        // if(colisionHappened) {
+        //     // effect
+        // }
     }
 
     Draw() {
